@@ -11,8 +11,6 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	printf("Creating a %s x %s file...\n", argv[1], argv[2]);
-
 	// remember width and height
 	int32_t width = atoi(argv[1]);
 	int32_t height = atoi(argv[2]);
@@ -22,6 +20,8 @@ int main(int argc, char *argv[]) {
 		printf("Invalid entry\n");
 		return 2;
 	}
+
+	printf("Creating a %s x %s file...\n", argv[1], argv[2]);
 
 	// remember outfile
 	char *outfile = argv[3];
