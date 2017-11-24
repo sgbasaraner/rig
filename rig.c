@@ -23,4 +23,13 @@ int main(int argc, char *argv[]) {
 
 	// remember outfile
 	char *outfile = argv[3];
+
+	// create BITMAPFILEHEADER
+	BITMAPFILEHEADER bfh;
+	bfh.type = 0x4d42;
+	bfh.reserved1 = 0;
+	bfh.reserved2 = 0;
+	bfh.offBits = 54;
+
+	// TODO: calculate bfh.size
 }
