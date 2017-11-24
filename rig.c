@@ -4,8 +4,8 @@
 
 int main(int argc, char *argv[]) {
 	// ensure proper usage
-	if (argc != 3){
-		printf("Usage: ./rig width height\n");
+	if (argc != 4){
+		printf("Usage: ./rig width height outfile\n");
 		return 1;
 	}
 
@@ -20,4 +20,7 @@ int main(int argc, char *argv[]) {
 		printf("Invalid entry\n");
 		return 2;
 	}
+
+	// remember outfile
+	char *outfile = argv[3];
 }
