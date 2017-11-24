@@ -12,8 +12,8 @@ int main(int argc, char *argv[]) {
 	printf("W: %s, H: %s\n", argv[1], argv[2]);
 
 	// remember width and height
-	int16_t width = atoi(argv[1]);
-	int16_t height = atoi(argv[2]);
+	int32_t width = atoi(argv[1]);
+	int32_t height = atoi(argv[2]);
 
 	// check for conversion errors and invalid entry
 	if ((width == 0) || (height == 0)) {
