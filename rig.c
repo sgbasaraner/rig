@@ -61,5 +61,13 @@ int main(int argc, char *argv[]) {
 	fwrite(&bfh, sizeof(BITMAPFILEHEADER), 1, outptr);
 	fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, outptr);
 
+	// iterate over scanlines
+	for (int i = 0; i < height; i++) {
+		// iterate over pixels
+		for (int j = 0; j < width; j++) {
+			RGBTRIPLE triple;
+		}
+	}
+
 	fclose(outptr);
 }
