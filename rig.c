@@ -38,7 +38,8 @@ int main(int argc, char *argv[]) {
 	bih.sizeImage = (width * sizeof(RGBTRIPLE) + padding) * height;
 	bih.clrUsed = 0;
 	bih.clrImportant = 0;
-	// TODO: calculate PelsPerMeter for x and y
+	bih.xPelsPerMeter = 2834;
+	bih.yPelsPerMeter = 2834;
 
 	// create BITMAPFILEHEADER
 	BITMAPFILEHEADER bfh;
