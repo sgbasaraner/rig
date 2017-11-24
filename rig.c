@@ -24,12 +24,27 @@ int main(int argc, char *argv[]) {
 	// remember outfile
 	char *outfile = argv[3];
 
+	// calculate padding
+	int padding = (4 - (width * sizeof(RGBTRIPLE)) % 4) % 4;
+
+	// create BITMAPINFOHEADER
+	BITMAPINFOHEADER bih;
+	bih.size = 40;
+	bih.width = width;
+	bih.height = height - (2 * height);
+	bih.planes = 1;
+	bih.bitCount = 24;
+	bih.compression = 0;
+	bih.sizeImage = (width * sizeof(RGBTRIPLE) + padding) * height;
+	bih.clrUsed = 0;
+	bih.clrImportant = 0;
+	// TODO: calculate PelsPerMeter for x and y
+
 	// create BITMAPFILEHEADER
 	BITMAPFILEHEADER bfh;
 	bfh.type = 0x4d42;
 	bfh.reserved1 = 0;
 	bfh.reserved2 = 0;
 	bfh.offBits = 54;
-
-	// TODO: calculate bfh.size
+	bfh.size = bih.sizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
 }
