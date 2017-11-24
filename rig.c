@@ -67,14 +67,21 @@ int main(int argc, char *argv[]) {
 		for (int j = 0; j < width; j++) {
 			RGBTRIPLE triple;
 			// randomize RGB values
-			RGBTRIPLE.blue = (rand() % 256);
-			RGBTRIPLE.green = (rand() % 256);
-			RGBTRIPLE.red = (rand() % 256);
+			triple.blue = (rand() % 256);
+			triple.green = (rand() % 256);
+			triple.red = (rand() % 256);
 
 			// write to outfile
 			fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
 		}
+
+		// add padding
+		for (int k = 0; k < padding; k++) {
+			fputc(0x00, outptr);
+		}
 	}
 
 	fclose(outptr);
+
+	return 0;
 }
