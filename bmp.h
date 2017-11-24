@@ -10,34 +10,34 @@ typedef uint16_t WORD;
 
 typedef struct 
 { 
-    WORD bfType; 
-    DWORD bfSize; 
-    WORD bfReserved1; 
-    WORD bfReserved2; 
-    DWORD bfOffBits; 
+    WORD type; 
+    DWORD size; 
+    WORD reserved1; 
+    WORD reserved2; 
+    DWORD offBits; 
 } __attribute__((__packed__)) 
 BITMAPFILEHEADER; 
 
 typedef struct
 {
-    DWORD biSize; 
-    LONG biWidth; 
-    LONG biHeight; 
-    WORD biPlanes; 
-    WORD biBitCount; 
-    DWORD biCompression; 
-    DWORD biSizeImage; 
-    LONG biXPelsPerMeter; 
-    LONG biYPelsPerMeter; 
-    DWORD biClrUsed; 
-    DWORD biClrImportant; 
+    DWORD size; 
+    LONG width; 
+    LONG height; 
+    WORD planes; 
+    WORD bitCount; 
+    DWORD compression; 
+    DWORD sizeImage; 
+    LONG xPelsPerMeter; 
+    LONG yPelsPerMeter; 
+    DWORD clrUsed; 
+    DWORD clrImportant; 
 } __attribute__((__packed__))
 BITMAPINFOHEADER; 
 
 typedef struct
 {
-    BYTE rgbtBlue;
-    BYTE rgbtGreen;
-    BYTE rgbtRed;
+    BYTE blue;
+    BYTE green;
+    BYTE red;
 } __attribute__((__packed__))
 RGBTRIPLE;
