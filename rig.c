@@ -66,6 +66,13 @@ int main(int argc, char *argv[]) {
 		// iterate over pixels
 		for (int j = 0; j < width; j++) {
 			RGBTRIPLE triple;
+			// randomize RGB values
+			RGBTRIPLE.blue = (rand() % 256);
+			RGBTRIPLE.green = (rand() % 256);
+			RGBTRIPLE.red = (rand() % 256);
+
+			// write to outfile
+			fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
 		}
 	}
 
