@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include "bmp.h"
 
 int main(int argc, char *argv[]) {
 	// ensure proper usage
@@ -48,4 +49,17 @@ int main(int argc, char *argv[]) {
 	bfh.reserved2 = 0;
 	bfh.offBits = 54;
 	bfh.size = bih.sizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+
+	// open output file
+	FILE *outptr = fopen(outfile, "w");
+	if (outptr == NULL) {
+		fprintf(stderr, "Could not create %s.\n", outfile);
+		return 3;
+	}
+
+	// write BITMAPFILEHEADER and BITMAPINFOHEADER to outfile
+	fwrite(&bfh, sizeof(BITMAPFILEHEADER), 1, outptr);
+	fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, outptr);
+
+	fclose(outptr);
 }
