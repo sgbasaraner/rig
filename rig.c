@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
+	// ensure proper usage
 	if (argc != 3){
 		printf("Usage: ./rig width height\n");
 		return 1;
@@ -14,6 +15,7 @@ int main(int argc, char *argv[]) {
 	int16_t width = atoi(argv[1]);
 	int16_t height = atoi(argv[2]);
 
+	// check for conversion errors and invalid entry
 	if ((width == 0) || (height == 0)) {
 		printf("Invalid entry\n");
 		return 2;
