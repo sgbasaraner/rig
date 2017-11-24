@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <time.h>
 #include "bmp.h"
 
 int main(int argc, char *argv[]) {
@@ -60,6 +61,9 @@ int main(int argc, char *argv[]) {
 	// write BITMAPFILEHEADER and BITMAPINFOHEADER to outfile
 	fwrite(&bfh, sizeof(BITMAPFILEHEADER), 1, outptr);
 	fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, outptr);
+
+	// improve randomization
+	srand(time(NULL));
 
 	// iterate over scanlines
 	for (int i = 0; i < height; i++) {
