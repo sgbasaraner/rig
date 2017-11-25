@@ -86,9 +86,8 @@ int main(int argc, char *argv[]) {
 			fputc(0x00, outptr);
 		}
 	}
-
-	int32_t *ptr = &width;
-	horizontal_line(outptr, ptr);
+	
+	horizontal_line(outptr, &width, &height);
 
 	fclose(outptr);
 
