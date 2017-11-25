@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "bmp.h"
+#include "algorithms.h"
 
 int main(int argc, char *argv[]) {
 	// ensure proper usage
