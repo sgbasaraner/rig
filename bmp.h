@@ -1,3 +1,5 @@
+#ifndef BMP_H
+#define BMP_H
 #include <stdint.h>
 
 // aliases for data types
@@ -41,3 +43,4 @@ typedef struct
     BYTE red;
 } __attribute__((__packed__))
 RGBTRIPLE;
+#endif
