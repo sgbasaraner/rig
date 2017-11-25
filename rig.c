@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #include "bmp.h"
 #include "algorithms.h"
 
@@ -85,6 +86,9 @@ int main(int argc, char *argv[]) {
 			fputc(0x00, outptr);
 		}
 	}
+
+	int32_t *ptr = &width;
+	horizontal_line(outptr, ptr);
 
 	fclose(outptr);
 
